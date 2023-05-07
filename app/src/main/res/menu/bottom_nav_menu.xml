@@ -2,19 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/blankFragment"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Analytics"/>
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="" />
+<!--        android:title="Analytics"/>-->
     <item
         android:id="@+id/blankFragment2"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Transactions"/>
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Transactions" />
     <item
         android:id="@+id/blankFragment3"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Add"/>
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Add" />
     <item
         android:id="@+id/blankFragment4"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_launcher_foreground"
         android:title="Goals"/>
 
 </menu>

@@ -7,22 +7,18 @@
 
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.example.finapp.BlankFragment"
-        android:label="fragment_blank"
+        android:name="com.example.finapp.ui.theme.firstPage.BlankFragment"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/blankFragment2"
-        android:name="com.example.finapp.BlankFragment2"
-        android:label="fragment_blank2"
+        android:name="com.example.finapp.ui.theme.secondPage.BlankFragment2"
         tools:layout="@layout/fragment_blank2" />
     <fragment
         android:id="@+id/blankFragment3"
-        android:name="com.example.finapp.BlankFragment3"
-        android:label="fragment_blank3"
+        android:name="com.example.finapp.ui.theme.thirdPage.BlankFragment3"
         tools:layout="@layout/fragment_blank3" />
     <fragment
         android:id="@+id/blankFragment4"
-        android:name="com.example.finapp.BlankFragment4"
-        android:label="fragment_blank4"
+        android:name="com.example.finapp.ui.theme.fourthPage.BlankFragment4"
         tools:layout="@layout/fragment_blank4" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.finapp
+package com.example.finapp.ui.theme.fourthPage
 
 import androidx.lifecycle.ViewModel
 

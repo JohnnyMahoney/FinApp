@@ -1,6 +1,8 @@
 package com.example.finapp
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -26,6 +28,11 @@ class MainActivity : AppCompatActivity() {
            ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.bottom_nav_menu, menu)
+        return true
     }
 }
 

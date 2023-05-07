@@ -1,4 +1,4 @@
-package com.example.finapp
+package com.example.finapp.ui.theme.fourthPage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.finapp.R
 
 class BlankFragment4 : Fragment() {
 
