@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutSplash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context="com.example.finapp.SplashScreen">
+    android:orientation="vertical"
+    android:background="@color/black">
 
   <ImageView
-      android:layout_width="100000dp"
-      android:layout_height="100000dp"
-      android:src="@drawable/img"/>
+      android:contentDescription="@string/app_name"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      style="@style/SplashTheme"
+      android:src="@drawable/img" />
 
-</RelativeLayout>
+</LinearLayout>
