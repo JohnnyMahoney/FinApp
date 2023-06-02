@@ -3,31 +3,37 @@ package com.example.finapp
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
+        println(firebase)
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.blankFragment,
-            R.id.blankFragment2,
-            R.id.blankFragment3,
-            R.id.blankFragment4
-           ))
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.blankFragment,
+                R.id.blankFragment2,
+                R.id.blankFragment3,
+                R.id.blankFragment4
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

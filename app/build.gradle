@@ -1,11 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
     namespace 'com.example.finapp'
     compileSdk 33
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.finapp"
@@ -74,9 +78,8 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
-//    dependencies {
-//        implementation('com.example:library:1.0.0') {
-//            exclude group: 'org.example', module: 'conflicting-library'
-//        }
-//    }
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'androidx.fragment:fragment:1.5.7'
+
 }

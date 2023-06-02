@@ -28,6 +28,9 @@
             android:theme="@style/Theme.AppCompat"
             android:screenOrientation="portrait"
             />
+        <activity
+            android:name=".ui.theme.thirdPage.BlankFragment33">
+        </activity>
     </application>
 
 </manifest>

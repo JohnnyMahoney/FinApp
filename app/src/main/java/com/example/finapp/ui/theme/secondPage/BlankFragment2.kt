@@ -1,11 +1,11 @@
 package com.example.finapp.ui.theme.secondPage
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.finapp.R
 
 class BlankFragment2 : Fragment() {
@@ -28,5 +28,6 @@ class BlankFragment2 : Fragment() {
         viewModel = ViewModelProvider(this).get(BlankViewModel2::class.java)
         // TODO: Use the ViewModel
     }
+
 
 }
