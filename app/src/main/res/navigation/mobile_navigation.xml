@@ -15,7 +15,7 @@
         tools:layout="@layout/fragment_blank2" />
     <fragment
         android:id="@+id/blankFragment3"
-        android:name="com.example.finapp.ui.theme.thirdPage.BlankFragment33"
+        android:name="com.example.finapp.ui.theme.thirdPage.BlankFragment3"
         tools:layout="@layout/fragment_blank3" />
     <fragment
         android:id="@+id/blankFragment4"
