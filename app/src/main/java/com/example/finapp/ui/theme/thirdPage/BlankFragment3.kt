@@ -12,6 +12,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.finapp.R
+import com.example.finapp.data.repository.TransactionModelFactory
+import com.example.finapp.data.repository.TransactionsRepository
 
 
 class BlankFragment3 : Fragment() {
@@ -20,7 +22,6 @@ class BlankFragment3 : Fragment() {
     }
 
     private lateinit var viewModel: BlankViewModel3
-    private var currentValue: String = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,10 +29,11 @@ class BlankFragment3 : Fragment() {
         return inflater.inflate(R.layout.fragment_blank3, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BlankViewModel3::class.java)
-        // TODO: Use the ViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val viewModelFactory = TransactionModelFactory(TransactionsRepository())
+        viewModel = ViewModelProvider(this, viewModelFactory)[BlankViewModel3::class.java]
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,27 +54,26 @@ class BlankFragment3 : Fragment() {
                 button.setOnClickListener {
                     when {
                         button.id == R.id.clear -> {
-                            println(currentValue)
-                            currentValue = currentValue.dropLast(1)
-                            textView.text = currentValue
+                            viewModel.clearLastDigit()
+                            textView.text = viewModel.currentTransaction.value
                         }
                         button.id == R.id.point -> {
-                            currentValue += button.text
-                            textView.text = currentValue
+                            viewModel.addNumber(button.text.toString())
+                            textView.text = viewModel.currentTransaction.value
                         }
                         else -> {
-                            currentValue += button.text
-                            textView.text = currentValue
+                            viewModel.addNumber(button.text.toString())
+                            textView.text = viewModel.currentTransaction.value
                         }
                     }
                 }
             }
         }
 
-        textView.text = currentValue
+        textView.text = viewModel.currentTransaction.value
         saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
-                println("hello")
+                viewModel.addTransaction()
             }
         })
 
