@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.finapp.R
-import com.example.finapp.data.repository.TransactionModelFactory
 import com.example.finapp.data.repository.TransactionsRepository
 
 
@@ -22,6 +20,8 @@ class BlankFragment3 : Fragment() {
     }
 
     private lateinit var viewModel: BlankViewModel3
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +33,6 @@ class BlankFragment3 : Fragment() {
         super.onCreate(savedInstanceState)
         val viewModelFactory = TransactionModelFactory(TransactionsRepository())
         viewModel = ViewModelProvider(this, viewModelFactory)[BlankViewModel3::class.java]
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -76,6 +75,8 @@ class BlankFragment3 : Fragment() {
                 viewModel.addTransaction()
             }
         })
+
+
 
     }
 

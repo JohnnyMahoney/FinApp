@@ -48,9 +48,9 @@ class Transaction {
             if (map.containsKey("value"))
                 transaction.value = map["value"] as String
             if (map.containsKey("type"))
-                transaction.type = map["type"] as TransactionType
+                transaction.type = TransactionType.valueOf(map["type"] as String)
             if (map.containsKey("category"))
-                transaction.category = map["category"] as Category
+                transaction.category = Category.valueOf(map["category"] as String)
             if (map.containsKey("time"))
                 transaction.time = map["time"] as Long
 
