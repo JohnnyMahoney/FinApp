@@ -19,8 +19,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
-        println(firebase)
+
+        val firebase: DatabaseReference = FirebaseDatabase.getInstance().getReference()
+//        val firestore = FirebaseFirestore.getInstance()
+//        firestore.clearPersistence()
+//            .addOnSuccessListener {
+//            val settings = FirebaseFirestoreSettings.Builder()
+//                .setPersistenceEnabled(true)
+//                .build()
+//            firestore.firestoreSettings = settings
+//        }
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
@@ -36,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
