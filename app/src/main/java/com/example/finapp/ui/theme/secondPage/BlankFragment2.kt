@@ -1,7 +1,6 @@
 package com.example.finapp.ui.theme.secondPage
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,6 @@ import com.example.finapp.data.repository.TransactionsRepository
 
 
 class BlankFragment2 : Fragment() {
-
     companion object {
         fun newInstance() = BlankFragment2()
     }
@@ -34,7 +32,6 @@ class BlankFragment2 : Fragment() {
         super.onCreate(savedInstanceState)
         val viewModelFactory = TransactionModelFactory(TransactionsRepository())
         viewModel = ViewModelProvider(this, viewModelFactory)[BlankViewModel2::class.java]
-
         viewModel.getTransactions()
     }
 
@@ -51,8 +48,5 @@ class BlankFragment2 : Fragment() {
             recyclerView.adapter = adapter
         })
         viewModel.getTransactions()
-
     }
-
-
 }
