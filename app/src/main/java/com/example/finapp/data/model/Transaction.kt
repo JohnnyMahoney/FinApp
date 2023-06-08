@@ -2,17 +2,16 @@ package com.example.finapp.data.model
 
 enum class TransactionType {
     income,
-    outcome
+    outcome,
+    INCOME,
+    OUTCOME
 }
-
 enum class Category {
     auto,
     food,
     sport,
     house
 }
-
-
 class Transaction {
     var value: String = ""
     var type: TransactionType = TransactionType.income
@@ -20,7 +19,6 @@ class Transaction {
     var time: Long = 0
 
     constructor()
-
     constructor(
         value: String,
         type: TransactionType,

@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.finapp.R
+import com.example.finapp.data.model.TransactionType
 import com.example.finapp.data.repository.TransactionsRepository
 
 
@@ -42,7 +45,14 @@ class BlankFragment3 : Fragment() {
         val saveButton =
             requireView().findViewById<View>(R.id.saveButton) as Button
 
+        val clearButton =
+            requireView().findViewById<View>(R.id.clearButton) as Button
+
         val tableLayout: TableLayout = requireView().findViewById(R.id.buttons_view)
+
+        val radioGroup: RadioGroup = requireView().findViewById(R.id.radioGroup)
+        val incomeRadioButton: RadioButton = requireView().findViewById(R.id.incomeRadioButton)
+        val outcomeRadioButton: RadioButton = requireView().findViewById(R.id.outcomeRadioButton)
 
         for (i in 0 until tableLayout.childCount) {
             val row = tableLayout.getChildAt(i) as TableRow
@@ -52,17 +62,27 @@ class BlankFragment3 : Fragment() {
 
                 button.setOnClickListener {
                     when {
+                        button.id == R.id.clearButton -> {
+                            radioGroup.clearCheck()
+                            textView.text = viewModel.currentTransaction.value
+                        }
+
                         button.id == R.id.clear -> {
                             viewModel.clearLastDigit()
                             textView.text = viewModel.currentTransaction.value
                         }
+
                         button.id == R.id.point -> {
                             viewModel.addNumber(button.text.toString())
                             textView.text = viewModel.currentTransaction.value
                         }
+
                         else -> {
                             viewModel.addNumber(button.text.toString())
                             textView.text = viewModel.currentTransaction.value
+                            val type =
+                                if (incomeRadioButton.isChecked) TransactionType.INCOME else TransactionType.OUTCOME
+                            viewModel.addType(type)
                         }
                     }
                 }
@@ -75,9 +95,5 @@ class BlankFragment3 : Fragment() {
                 viewModel.addTransaction()
             }
         })
-
-
-
     }
-
 }

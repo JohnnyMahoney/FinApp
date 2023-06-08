@@ -9,8 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,19 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val firebase: DatabaseReference = FirebaseDatabase.getInstance().getReference()
-//        val firestore = FirebaseFirestore.getInstance()
-//        firestore.clearPersistence()
-//            .addOnSuccessListener {
-//            val settings = FirebaseFirestoreSettings.Builder()
-//                .setPersistenceEnabled(true)
-//                .build()
-//            firestore.firestoreSettings = settings
-//        }
-
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
         val navController = findNavController(R.id.nav_host_fragment)
 
         val appBarConfiguration = AppBarConfiguration(
