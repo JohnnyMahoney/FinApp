@@ -8,7 +8,6 @@ import com.google.firebase.ktx.Firebase
 class TransactionsRepository {
     fun addTransaction(transaction: Transaction) {
         val db = Firebase.firestore
-
         db.collection("transactions")
             .add(transaction.toMap())
             .addOnSuccessListener { documentReference ->
@@ -22,7 +21,6 @@ class TransactionsRepository {
     fun getAllTransactions(callback: (List<Transaction>) -> Unit) {
         val db = Firebase.firestore
         val transactions = ArrayList<Transaction>()
-
         db.collection("transactions")
             .get()
             .addOnSuccessListener { result ->
