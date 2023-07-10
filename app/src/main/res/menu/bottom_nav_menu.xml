@@ -4,9 +4,7 @@
         android:id="@+id/blankFragment"
         android:icon="@drawable/ic_action_analytics"
         android:title="Analytics"
-
         />
-
     <item
         android:id="@+id/blankFragment2"
         android:icon="@drawable/ic_action_transactions"
@@ -19,5 +17,4 @@
         android:id="@+id/blankFragment4"
         android:icon="@drawable/ic_action_goals"
         android:title="Goals" />
-
 </menu>
