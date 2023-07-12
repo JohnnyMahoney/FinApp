@@ -1,17 +1,36 @@
 package com.example.finapp.data.model
 
+import com.example.finapp.R
+
 enum class TransactionType {
     income,
     outcome,
     INCOME,
     OUTCOME
 }
+
 enum class Category {
     auto,
     food,
     sport,
-    house
+    house;
+
+
+    companion object {
+
+        fun categoryToResource(category: Category): Int {
+            return when (category) {
+                auto -> R.drawable.ic_action_car
+                food -> R.drawable.ic_action_food
+                sport -> R.drawable.ic_action_sport
+                house -> R.drawable.ic_action_house
+                else -> R.drawable.ic_action_default
+            }
+        }
+    }
 }
+
+
 class Transaction {
     var value: String = ""
     var type: TransactionType = TransactionType.income

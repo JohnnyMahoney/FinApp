@@ -3,18 +3,21 @@ package com.example.finapp.ui.theme.secondPage
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finapp.R
+import com.example.finapp.data.model.Category
 import com.example.finapp.data.model.Transaction
 
 class TransactionAdapter(private val transactions: List<Transaction>) :
     RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val categoryImageView: ImageView = itemView.findViewById(R.id.category)
         val valueTextView: TextView = itemView.findViewById(R.id.valueTextView)
         val typeTextView: TextView = itemView.findViewById(R.id.typeTextView)
-        // Add more TextViews for other properties of the Transaction object
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,9 +29,10 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val transaction = transactions[position]
 
+        holder.categoryImageView.setImageResource(Category.categoryToResource(transaction.category))
         holder.valueTextView.text = transaction.value
         holder.typeTextView.text = transaction.type.toString()
-        // Set values for other TextViews using transaction object properties
+
     }
 
     override fun getItemCount(): Int {
