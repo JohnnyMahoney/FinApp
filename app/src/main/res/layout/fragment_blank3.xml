@@ -28,7 +28,7 @@
         android:textColor="#25383C"
         android:textSize="20dp"
         android:fontStyle="italic"
-        android:text="herdsadsadsadae"
+        android:text=""
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
@@ -132,10 +132,10 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Apply"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttons_view" />
@@ -184,5 +184,4 @@
         android:text="Clear"
         tools:ignore="MissingConstraints"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

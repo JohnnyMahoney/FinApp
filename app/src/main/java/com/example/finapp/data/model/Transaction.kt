@@ -36,6 +36,14 @@ class Transaction {
     var type: TransactionType = TransactionType.income
     var category: Category = Category.auto
     var time: Long = 0
+    fun copy(): Transaction {
+        val copy = Transaction()
+        copy.time = this.time
+        copy.value = this.value
+        copy.type = this.type
+        copy.category = this.category
+        return copy
+    }
 
     constructor()
     constructor(
