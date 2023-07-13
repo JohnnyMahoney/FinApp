@@ -9,14 +9,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.finapp.R
 import com.example.finapp.data.model.Category
 import com.example.finapp.data.model.Transaction
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class TransactionAdapter(private val transactions: List<Transaction>) :
     RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val categoryImageView: ImageView = itemView.findViewById(R.id.category)
-        val valueTextView: TextView = itemView.findViewById(R.id.valueTextView)
-        val typeTextView: TextView = itemView.findViewById(R.id.typeTextView)
+        val transactionNameTextView: TextView = itemView.findViewById(R.id.transactionName)
+        val valueTextView: TextView = itemView.findViewById(R.id.value)
+        val typeTextView: TextView = itemView.findViewById(R.id.type)
 
     }
 
@@ -30,7 +33,11 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
         val transaction = transactions[position]
 
         holder.categoryImageView.setImageResource(Category.categoryToResource(transaction.category))
-        holder.valueTextView.text = transaction.value
+        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+        val netDate = Date(transaction.time)
+        holder.transactionNameTextView.text = sdf.format(netDate)
+//        holder.transactionNameTextView.text = transaction.time.toString()
+        holder.valueTextView.text = "${transaction.value} Euro"
         holder.typeTextView.text = transaction.type.toString()
 
     }

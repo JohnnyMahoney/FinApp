@@ -7,25 +7,38 @@
         android:id="@+id/category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="14sp"
-        android:text=""/>
+        android:layout_marginStart="8dp" />
 
-    <TextView
-        android:id="@+id/valueTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="sdfdsfds"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/typeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="14sp"
-        android:text="dfsdfdsfds"/>
+        <TextView
+            android:id="@+id/transactionName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="Transaction Name"/>
 
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="Transaction Value"/>
 
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:text="Transaction Type"/>
+
+    </LinearLayout>
 
 </LinearLayout>
