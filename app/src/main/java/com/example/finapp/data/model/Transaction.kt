@@ -6,7 +6,8 @@ enum class TransactionType {
     income,
     outcome,
     INCOME,
-    OUTCOME
+    OUTCOME,
+    NONE
 }
 
 enum class Category {

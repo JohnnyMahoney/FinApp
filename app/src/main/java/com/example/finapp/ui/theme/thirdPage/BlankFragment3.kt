@@ -51,9 +51,8 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
         super.onViewCreated(view, savedInstanceState)
         val textView = requireView().findViewById<View>(R.id.variableEditText) as TextView
         val applyButton = requireView().findViewById<View>(R.id.applyButton) as Button
-        val clearButton = requireView().findViewById<View>(R.id.clearButton) as Button
         val tableLayout: TableLayout = requireView().findViewById(R.id.buttons_view)
-        val radioGroup: RadioGroup = requireView().findViewById(R.id.radioGroup)
+        val radioGroup: RadioGroup = requireView().findViewById(R.id.transactionTypeRadioGroup)
         val incomeRadioButton: RadioButton = requireView().findViewById(R.id.incomeRadioButton)
         val outcomeRadioButton: RadioButton = requireView().findViewById(R.id.outcomeRadioButton)
 
@@ -73,10 +72,6 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
 
                 button.setOnClickListener {
                     when {
-                        button.id == R.id.clearButton -> {
-                            radioGroup.clearCheck()
-                        }
-
                         button.id == R.id.clear -> {
                             viewModel.clearLastDigit()
                         }
@@ -87,9 +82,7 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
 
                         else -> {
                             viewModel.addNumber(button.text.toString())
-                            val type =
-                                if (incomeRadioButton.isChecked) TransactionType.INCOME else TransactionType.OUTCOME
-                            viewModel.addType(type)
+
                         }
                     }
                 }
@@ -97,6 +90,12 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
         }
 
         applyButton.setOnClickListener {
+            val type = when (radioGroup.checkedRadioButtonId) {
+                R.id.incomeRadioButton -> TransactionType.INCOME
+                R.id.outcomeRadioButton -> TransactionType.OUTCOME
+                else -> TransactionType.NONE
+            }
+            viewModel.addType(type)
             bottomSheetFragment.callback = this
             bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
         }
