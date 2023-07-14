@@ -19,40 +19,84 @@
         android:orientation="horizontal">
     <ImageButton
         android:id="@+id/btn1"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@android:color/transparent"
         android:scaleType="fitStart"
-        android:layout_margin="10dp"
+        android:layout_margin="16dp"
         android:src="@drawable/ic_action_sport" />
 
-    <ImageButton
-        android:id="@+id/btn2"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitStart"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_action_food"/>
-    <ImageButton
-        android:id="@+id/btn3"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitStart"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_action_car"/>
-    <ImageButton
-        android:id="@+id/btn4"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitStart"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_action_house"/>
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_food" />
+
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_car" />
+
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_house" />
 
 
-</LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btn5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_action_clother" />
+
+        <ImageButton
+            android:id="@+id/btn6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_work" />
+
+        <ImageButton
+            android:id="@+id/btn7"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_goal" />
+
+        <ImageButton
+            android:id="@+id/btn8"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_action_other" />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/saveButton"

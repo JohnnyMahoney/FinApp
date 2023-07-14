@@ -7,14 +7,18 @@ enum class TransactionType {
     outcome,
     INCOME,
     OUTCOME,
-    NONE
+    NONE;
 }
 
 enum class Category {
     auto,
     food,
     sport,
-    house;
+    house,
+    clothes,
+    work,
+    goal,
+    other;
 
 
     companion object {
@@ -25,6 +29,10 @@ enum class Category {
                 food -> R.drawable.ic_action_food
                 sport -> R.drawable.ic_action_sport
                 house -> R.drawable.ic_action_house
+                clothes -> R.drawable.ic_action_clother
+                work -> R.drawable.ic_action_work
+                goal -> R.drawable.ic_action_goal
+                other -> R.drawable.ic_action_other
                 else -> R.drawable.ic_action_default
             }
         }
@@ -84,4 +92,5 @@ class Transaction {
         }
     }
 }
+
 

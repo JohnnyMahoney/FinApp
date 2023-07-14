@@ -50,31 +50,24 @@ class BlankFragment2 : Fragment() {
             Log.d("BlankFragment2", "DataList changed, size: ${dataList.size}")
             val adapter = TransactionAdapter(dataList)
             recyclerView.adapter = adapter
-            // Calculate the total sum of transactions
             var totalSum = 0.0
             dataList.forEach { transaction ->
-                // Convert the value to a Double and add it to the total
                 try {
                     val value = transaction.value.toDouble()
-
-                    // Assuming you have income and outcome types as a property in Transaction model
                     if (transaction.type == TransactionType.INCOME) {
                         totalSum += value
                     } else if (transaction.type == TransactionType.OUTCOME) {
                         totalSum -= value
                     }
                 } catch (e: NumberFormatException) {
-                    // This block will be executed if the String cannot be converted to a Double
                     Log.e("BlankFragment2", "Error converting transaction value to double", e)
                 }
             }
             Log.d("BlankFragment2", "Total sum calculated: $totalSum")
 
-            // Set total sum to the TextView
-            // Make sure you have a TextView with the id totalSumTextView in your layout
             val totalSumTextView = requireView().findViewById<TextView>(R.id.totalSumTextView)
             activity?.runOnUiThread {
-                totalSumTextView.text = "Total left: $totalSum Euro"
+                totalSumTextView.text = String.format("Total left: %.2f Euro", totalSum)
                 Log.d("BlankFragment2", "Total sum set to TextView")
             }
         })
