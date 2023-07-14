@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TableLayout
 import android.widget.TableRow
@@ -52,8 +51,6 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
         val applyButton = requireView().findViewById<View>(R.id.applyButton) as Button
         val tableLayout: TableLayout = requireView().findViewById(R.id.buttons_view)
         val radioGroup: RadioGroup = requireView().findViewById(R.id.transactionTypeRadioGroup)
-        val incomeRadioButton: RadioButton = requireView().findViewById(R.id.incomeRadioButton)
-        val outcomeRadioButton: RadioButton = requireView().findViewById(R.id.outcomeRadioButton)
 
         viewModel.currentTransaction.observe(viewLifecycleOwner, Observer { transaction ->
             if (transaction != null) {
