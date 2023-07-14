@@ -46,7 +46,6 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.currentTransaction.observe(viewLifecycleOwner, Observer { transaction ->
-//            textView.text = transaction.value // assuming `value` is a string.
         })
         super.onViewCreated(view, savedInstanceState)
         val textView = requireView().findViewById<View>(R.id.variableEditText) as TextView
@@ -56,9 +55,7 @@ class BlankFragment3 : Fragment(), BottomSheetCallback {
         val incomeRadioButton: RadioButton = requireView().findViewById(R.id.incomeRadioButton)
         val outcomeRadioButton: RadioButton = requireView().findViewById(R.id.outcomeRadioButton)
 
-        // Observe the LiveData of the currentTransaction object
         viewModel.currentTransaction.observe(viewLifecycleOwner, Observer { transaction ->
-            // Update the textView when the currentTransaction is updated
             if (transaction != null) {
                 textView.text = transaction.value
             }
